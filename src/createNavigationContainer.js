@@ -96,7 +96,7 @@ export default function createNavigationContainer<T: *>(
       const params = {};
       const delimiter = this.props.uriPrefix || '://';
       let path = url.split(delimiter)[1];
-      if (!path) {
+      if (typeof path === 'undefined') {
         path = url;
       }
       return {
